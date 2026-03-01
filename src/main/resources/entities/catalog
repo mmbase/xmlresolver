@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <!--
+    This software is OSI Certified Open Source Software.
+    OSI Certified is a certification mark of the Open Source Initiative.
+
+    The license (Mozilla version 1.0) can be read at the MMBase site.
+    See http://www.MMBase.org/license
+  -->
+
+  <!-- ISO public identifiers for sets of character entities -->
+  <public publicId="ISO 8879-1986//ENTITIES Added Latin 1//EN//XML" uri="ISOlat1.pen"/>
+  <public publicId="ISO 8879:1986//ENTITIES Added Latin 1//EN//XML" uri="ISOlat1.pen"/>
+  <public publicId="ISO 9573-15:1993//ENTITIES Greek Letters//EN//XML" uri="ISOgrk1.pen"/>
+  <public publicId="ISO 8879:1986//ENTITIES Publishing//EN//XML" uri="ISOpub.pen"/>
+  <public publicId="ISO 8879:1986//ENTITIES General Technical//EN//XML" uri="ISOtech.pen"/>
+  <public publicId="ISO 8879:1986//ENTITIES Numeric and Special Graphic//EN//XML" uri="ISOnum.pen"/>
+  <public publicId="ISO 8879:1986//ENTITIES Diacritical Marks//EN//XML" uri="ISOdia.pen"/>
+
+  <!-- Web Application Definitions -->
+  <public publicId="-//Sun Microsystems, Inc.//DTD Web Application 2.2//EN" uri="web-app_2_3.dtd"/>
+</catalog>

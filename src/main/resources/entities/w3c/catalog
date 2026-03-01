@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <!-- Oasis entity catalog for Extensible HTML and SVG -->
+
+  <!-- Oasis entity catalog for Extensible HTML 1.0 -->
+  <public publicId="-//W3C//DTD XHTML 1.0 Strict//EN" uri="xhtml1-strict.dtd"/>
+  <public publicId="-//W3C//DTD XHTML 1.0 Transitional//EN" uri="xhtml1-transitional.dtd"/>
+  <public publicId="-//W3C//DTD XHTML 1.0 Frameset//EN" uri="xhtml1-frameset.dtd"/>
+
+  <!-- ISO latin 1 entity set for Extensible HTML (XML 1.0 format) -->
+  <public publicId="-//W3C//ENTITIES Latin 1 for XHTML//EN" uri="xhtml-lat1.ent"/>
+  <public publicId="-//W3C//ENTITIES Symbols for XHTML//EN" uri="xhtml-symbol.ent"/>
+  <public publicId="-//W3C//ENTITIES Special for XHTML//EN" uri="xhtml-special.ent"/>
+
+  <!-- Oasis entity catalog for Extensible HTML 1.1 -->
+  <public publicId="-//W3C//DTD XHTML 1.1//EN" uri="xhtml11-flat.dtd"/>
+
+  <!-- Oasis entity catalog for Scalable Vector Graphics -->
+  <public publicId="-//W3C//DTD SVG 20000303 Stylable//EN" uri="svg-20000303-stylable.dtd"/>
+  <public publicId="-//W3C//DTD SVG 20000303 Shared//EN" uri="svg-20000303-shared.dtd"/>
+  <public publicId="-//W3C//DTD SVG 20000303 Exchange//EN" uri="svg-20000303-exchange.dtd"/>
+  <public publicId="-//W3C//DTD SVG 1.0//EN" uri="svg10.dtd"/>
+</catalog>
