@@ -1,6 +1,7 @@
 package org.mmbase.util.xml.resolvers;
 
 import java.io.IOException;
+import java.io.InputStream;
 import javax.xml.parsers.*;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -50,6 +51,19 @@ class ResolversTest {
                 System.out.println("  System ID: " + (systemId != null ? systemId : "null"));
                 System.out.println("  Resolved to: " + source.getSystemId());
 
+                InputStream byteStream = source.getByteStream();
+                if (byteStream != null) {
+                    try (InputStream in = byteStream) {
+                        byte[] buffer = new byte[8192];
+                        int read;
+                        while ((read = in.read(buffer)) != -1) {
+                            System.out.write(buffer, 0, read);
+                        }
+                        System.out.flush();
+                    }
+                } else {
+                    System.out.println("  No byte stream available in resolved source.");
+                }
             } else {
                 System.out.println("Could not resolve: " + publicId);
             }
@@ -67,6 +81,18 @@ class ResolversTest {
     })
     public void resolvePublicId(String publicId) {
         resolve(publicId, null);
+    }
+
+
+    @ParameterizedTest
+    @ValueSource(strings = {
+        "ISO 8879-1986//ENTITIES Added Latin 1//EN//XML",
+        "-//OASIS//DTD DocBook XML V4.1.2//EN",
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.2//EN"
+
+    })
+    public void resolveSystemId(String systemId) {
+        resolve(null, systemId);
     }
     /**
      * Main method demonstrating various catalog lookups.

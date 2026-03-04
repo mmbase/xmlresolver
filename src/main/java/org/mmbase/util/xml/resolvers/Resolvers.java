@@ -1,20 +1,8 @@
 package org.mmbase.util.xml.resolvers;
 
 import org.xmlresolver.*;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.IOException;
 
 /**
- * Example of using the XMLResolver library with OASIS catalog files.
- *
- * This demonstrates how to use the catalog files in the entities/ directory
- * to resolve DTDs and entity references locally instead of fetching them
- * from the internet.
  */
 public class Resolvers {
 

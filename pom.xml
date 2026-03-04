@@ -10,14 +10,15 @@ See http://www.MMBase.org/license
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
-
+  <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.mmbase</groupId>
   <artifactId>mmbase-xmlresolver</artifactId>
-  <modelVersion>4.0.0</modelVersion>
+
   <packaging>jar</packaging>
-  <name>MMBase Entities</name>
+  <name>MMBase XML Resolver</name>
   <version>1.0-SNAPSHOT</version>
+  <description>Implementation of org.xmlresolver:xmlresolver, currently provided mainly the dockbook dtds used by MMBase's documentation rendering.</description>
 
   <properties>
   </properties>
@@ -55,17 +56,13 @@ See http://www.MMBase.org/license
             <encoding>UTF-8</encoding>
           </configuration>
         </plugin>
-
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
           <version>3.5.0</version>
         </plugin>
       </plugins>
-
     </pluginManagement>
     <plugins>
-
-
       <plugin>
         <artifactId>maven-jar-plugin</artifactId>
         <version>3.4.2</version>
