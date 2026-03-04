@@ -54,9 +54,9 @@ class ResolversTest {
                 InputStream byteStream = source.getByteStream();
                 if (byteStream != null) {
                     try (InputStream in = byteStream) {
-                        byte[] buffer = new byte[8192];
-                        int read;
-                        while ((read = in.read(buffer)) != -1) {
+                        byte[] buffer = new byte[128];
+                        int read = in.read(buffer);
+                        if (read > 0) {
                             System.out.write(buffer, 0, read);
                         }
                         System.out.flush();
@@ -76,8 +76,34 @@ class ResolversTest {
     @ValueSource(strings = {
         "ISO 8879-1986//ENTITIES Added Latin 1//EN//XML",
         "-//OASIS//DTD DocBook XML V4.1.2//EN",
-        "-//Sun Microsystems, Inc.//DTD Web Application 2.2//EN"
-
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.2//EN",
+        "ISO 8879:1986//ENTITIES Added Math Symbols: Arrow Relations//EN//XML",
+        "-//OASIS//DTD DocBook XML V4.1.2//EN",
+        "-//OASIS//ENTITIES DocBook XML Notations V4.1.2//EN",
+        "-//OASIS//ENTITIES DocBook XML Character Entities V4.1.2//EN",
+        "ISO 8879:1986//ENTITIES Added Math Symbols: Arrow Relations//EN//XML",
+        "ISO 8879:1986//ENTITIES Added Math Symbols: Binary Operators//EN//XML",
+        "ISO 8879:1986//ENTITIES Added Math Symbols: Delimiters//EN//XML",
+        "ISO 8879:1986//ENTITIES Added Math Symbols: Negated Relations//EN//XML",
+        "ISO 8879:1986//ENTITIES Added Math Symbols: Ordinary//EN//XML",
+        "ISO 8879:1986//ENTITIES Added Math Symbols: Relations//EN//XML",
+        "ISO 8879:1986//ENTITIES Box and Line Drawing//EN//XML",
+        "ISO 8879:1986//ENTITIES Russian Cyrillic//EN//XML",
+        "ISO 8879:1986//ENTITIES Non-Russian Cyrillic//EN//XML",
+        "ISO 8879:1986//ENTITIES Diacritical Marks//EN//XML",
+        "ISO 8879:1986//ENTITIES Greek Letters//EN//XML",
+        "ISO 8879:1986//ENTITIES Monotoniko Greek//EN//XML",
+        "ISO 8879:1986//ENTITIES Greek Symbols//EN//XML",
+        "ISO 8879:1986//ENTITIES Alternative Greek Symbols//EN//XML",
+        "ISO 8879:1986//ENTITIES Added Latin 1//EN//XML",
+        "ISO 8879:1986//ENTITIES Added Latin 2//EN//XML",
+        "ISO 8879:1986//ENTITIES Numeric and Special Graphic//EN//XML",
+        "ISO 8879:1986//ENTITIES Publishing//EN//XML",
+        "ISO 8879:1986//ENTITIES General Technical//EN//XML",
+        "-//OASIS//ELEMENTS DocBook XML Information Pool V4.1.2//EN",
+        "-//OASIS//DTD DocBook XML CALS Table Model V4.1.2//EN",
+        "-//OASIS//ELEMENTS DocBook XML Document Hierarchy V4.1.2//EN",
+        "-//OASIS//ENTITIES DocBook XML Additional General Entities V4.1.2//EN"
     })
     public void resolvePublicId(String publicId) {
         resolve(publicId, null);
@@ -86,9 +112,8 @@ class ResolversTest {
 
     @ParameterizedTest
     @ValueSource(strings = {
-        "ISO 8879-1986//ENTITIES Added Latin 1//EN//XML",
-        "-//OASIS//DTD DocBook XML V4.1.2//EN",
-        "-//Sun Microsystems, Inc.//DTD Web Application 2.2//EN"
+        "http://www.oasis-open.org/docbook/xml/4.1.2/ent/iso-amsa.ent",
+
 
     })
     public void resolveSystemId(String systemId) {
