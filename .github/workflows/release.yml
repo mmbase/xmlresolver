@@ -26,7 +26,7 @@ jobs:
           git config --global user.email 'github@meeuw.org'
           mvn --batch-mode  -Darguments=-DskipTests  -DpushChanges=false release:prepare
           git push --atomic -v --follow-tags
-          mvn --batch-mode -Darguments=-DskipTests release:perform
+          mvn -Pdeploy --batch-mode -Darguments=-DskipTests release:perform
         env:
           CENTRAL_USERNAME: ${{ secrets.CENTRAL_USERNAME }}
           CENTRAL_PASSWORD: ${{ secrets.CENTRAL_PASSWORD }}

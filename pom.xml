@@ -15,7 +15,7 @@ See http://www.MMBase.org/license
 
   <packaging>jar</packaging>
   <name>MMBase XML Resolver</name>
-  <version>1.1-SNAPSHOT</version>
+  <version>1.0-SNAPSHOT</version>
   <description>Implementation of org.xmlresolver:xmlresolver, currently provided mainly the dockbook dtds and entity sets used by MMBase's documentation rendering.</description>
 
   <properties>
@@ -111,9 +111,62 @@ See http://www.MMBase.org/license
   </build>
 
 
-
   <profiles>
-
+    <profile>
+      <id>deploy</id>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>3.2.8</version>
+            <executions>
+              <execution>
+                <id>sign-artifacts</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <artifactId>maven-source-plugin</artifactId>
+            <version>3.4.0</version>
+            <executions>
+              <execution>
+                <id>attach-sources</id>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <version>3.12.0</version>
+            <executions>
+              <execution>
+                <id>attach-javadocs</id>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+              </execution>
+            </executions>
+            <configuration>
+              <failOnError>false</failOnError>
+              <show>public</show>
+              <tags>
+                <tag>
+                  <name>apiNote</name>
+                </tag>
+                <tag>
+                  <name>implSpec</name>
+                </tag>
+              </tags>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
   </profiles>
-
 </project>
