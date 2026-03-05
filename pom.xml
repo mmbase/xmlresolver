@@ -17,9 +17,7 @@ See http://www.MMBase.org/license
   <name>MMBase XML Resolver</name>
   <version>1.0-SNAPSHOT</version>
   <description>Implementation of org.xmlresolver:xmlresolver, currently provided mainly the dockbook dtds and entity sets used by MMBase's documentation rendering.</description>
-
-  <properties>
-  </properties>
+  <url>https://github.com/mmbase/xmlresolver</url>
 
   <scm>
     <connection>scm:git:${project.scm.url}</connection>
