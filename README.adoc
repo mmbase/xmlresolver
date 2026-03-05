@@ -1,0 +1,27 @@
+= MMBase XMLResolver
+
+This module provides a collection of XML DTDs and entity definitions with OASIS catalog files for offline XML processing.
+
+This was mainly made to address https://github.com/mmbase/mmbase/issues/22[this isue].
+
+== What's Included
+
+Currently, it contains dtd's and entity sets from
+
+* *W3C Standards*: XHTML 1.0/1.1, SVG DTDs
+* *OASIS Standards*: DocBook XML V4.0, V4.1.2
+* *Java EE*: Web Application DTDs
+
+Also, it has:
+
+* A utility `org.mmbase.util.xml.resolvers.Resolvers` that provides a pre-configured `org.xmlresolver.Resolver` to access these.
+* a dependency on `org.xmlresolver:xmlresolver` for the actual resolution logic, which supports XML Catalog 1.1 and is actively maintained.
+
+The goal was mainly to resolve the entity sets and dts of docbook offline, because the oasis servers somewhen in the past decade started to give 429 response codes (too many requests), breaking the documentation rendering in MMBase.
+
+== TODO
+
+The catalog file is now created quite ad hoc, targeted at the docbook dtds. It would be good to make it more generic and include the other dtds as well, and also to automate the generation of the catalog file from the directory structure. Also, we could use this project to distribute the dtds served by mmbase.
+
+
+
